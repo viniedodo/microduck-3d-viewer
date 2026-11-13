@@ -1,19 +1,33 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" href="data:,">`n<title>Microduck 鸭子 3D 查看器</title>
+<title>Microduck 鸭子 3D 查看器</title>
+<link rel="icon" href="data:,">
 <style>
  html,body{margin:0;height:100%;background:#101619;overflow:hidden;font-family:system-ui,'Microsoft YaHei',sans-serif}
  #view{position:absolute;inset:0}
  #hint{position:fixed;left:14px;bottom:12px;color:#9fb3ab;font-size:12px;letter-spacing:.04em;user-select:none}
  #title{position:fixed;left:14px;top:12px;color:#d7e5de;font-size:13px;letter-spacing:.08em;user-select:none}
- #boom{position:fixed;right:14px;top:12px;background:#1c2a26;color:#c8ff6b;border:1px solid #3a5a4e;
-   border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;letter-spacing:.06em}
- #boom:hover{background:#24382f}
+ #panel{position:fixed;right:12px;top:12px;display:flex;flex-direction:column;gap:10px;min-width:250px;
+   background:rgba(14,20,23,.85);border:1px solid #2c443c;border-radius:10px;padding:12px 14px;backdrop-filter:blur(4px)}
+ .row{display:flex;align-items:center;gap:10px;color:#cfe0d8;font-size:13px;justify-content:space-between}
+ .row input[type=range]{flex:1;accent-color:#c8ff6b}
+ .val{min-width:46px;text-align:right;color:#c8ff6b;font-variant-numeric:tabular-nums;font-size:13px}
+ #partbox{display:none;flex-direction:column;gap:6px;border-top:1px solid #2c443c;padding-top:8px}
+ #pname{color:#c8ff6b;font-size:12px;letter-spacing:.03em}
+ #reset{background:#1c2a26;color:#cfe0d8;border:1px solid #3a5a4e;border-radius:6px;padding:6px 14px;font-size:12px;cursor:pointer;align-self:flex-end;letter-spacing:.06em}
+ #reset:hover{background:#24382f}
 </style></head>
 <body><div id="view"></div>
 <div id="title">MICRODUCK · 3D 装配参考</div>
-<button id="boom">爆炸展开</button>
-<div id="hint">拖动旋转 · 滚轮缩放 · 右键平移</div>
+<div id="panel">
+  <div class="row"><span>整体爆炸</span><input id="gboom" type="range" min="0" max="250" step="5" value="0"><span class="val" id="gval">0%</span></div>
+  <div id="partbox">
+    <div id="pname">—</div>
+    <div class="row"><span>单独拉出</span><input id="pboom" type="range" min="0" max="300" step="5" value="0"><span class="val" id="pval">0%</span></div>
+  </div>
+  <button id="reset">重置</button>
+</div>
+<div id="hint">点击零件可选中并单独拉出 · 拖动旋转 · 滚轮缩放 · 右键平移</div>
 <script type="module" src="./viewer.js"></script>
 </body></html>
