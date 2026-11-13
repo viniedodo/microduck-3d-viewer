@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">`n<title>Microduck 鸭子 3D 查看器</title>
+<style>
+ html,body{margin:0;height:100%;background:#101619;overflow:hidden;font-family:system-ui,'Microsoft YaHei',sans-serif}
+ #view{position:absolute;inset:0}
+ #hint{position:fixed;left:14px;bottom:12px;color:#9fb3ab;font-size:12px;letter-spacing:.04em;user-select:none}
+ #title{position:fixed;left:14px;top:12px;color:#d7e5de;font-size:13px;letter-spacing:.08em;user-select:none}
+ #boom{position:fixed;right:14px;top:12px;background:#1c2a26;color:#c8ff6b;border:1px solid #3a5a4e;
+   border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;letter-spacing:.06em}
+ #boom:hover{background:#24382f}
+</style></head>
+<body><div id="view"></div>
+<div id="title">MICRODUCK · 3D 装配参考</div>
+<button id="boom">爆炸展开</button>
+<div id="hint">拖动旋转 · 滚轮缩放 · 右键平移</div>
+<script type="module" src="./viewer.js"></script>
+</body></html>
