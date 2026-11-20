@@ -49,6 +49,12 @@ python -m http.server 8090 --bind 127.0.0.1
 
 （three.js 模块加载需要 HTTP 服务，不能直接双击 index.html。）
 
+## 相关链接
+
+- **[fanhao375 3D 接线图](https://fanhao375.github.io/microduck-replica/wiring3d/)** —— replica 项目的 3D 接线参考页：点零件或步骤高亮对应线路，可切换外壳/舵机编号/接口位号显示，与本仓库的装配视图互补
+- [kissqy 装配与接线参考](https://kissqy.github.io/Microduck-kissqy/assembly.html) —— kissqy 项目的爆炸装配页与接线说明
+- [Microduck 官方仓库](https://github.com/pollen-robotics/microduck) —— 机器人软件（Rust 守护进程）
+
 ## 来源与许可
 
 - 鸭子几何：`duck-visual.bin`（DUCK/2 自定义格式），取自 [kissqy/Microduck-kissqy](https://github.com/kissqy/Microduck-kissqy) 中控 R17 发布包；视觉模型上游为 [pollen-robotics/microduck_rl](https://github.com/pollen-robotics/microduck_rl)（视觉修订 `e8a2de5`）
